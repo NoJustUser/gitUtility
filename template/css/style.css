@@ -1,0 +1,56 @@
+
+
+.col-md-1 {
+    background-color: #cccccf;
+    width: 82px;
+    height: 60px;
+    margin: 0px 0px 0px 15px;
+    padding: 15px 1px;
+    border: 1px solid #cccccf;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 12px;
+    float: left;
+}
+.col-1 {
+    background-color: #cccccf;
+    width: 82px; 
+    height: 18px; 
+    margin: 1px 0px 0px 15px;
+    float: left;
+}
+
+.form-control {
+    font-size: 10px;
+}
+
+
+.time {
+    width: 31px;
+    height: 18px;
+    text-align: center;
+    background-color: #cccccf;
+    margin: 1px 1px;
+    float: left;
+}
+.end {
+    background-color: #cccccf;
+    width: 60px;
+    height: 18px;
+    margin: 1px 1px;
+    padding: 1px 0px 0px 0px;
+    text-align: center;
+    font-size: 11px;
+    float: left;
+}
+#contr-sm {
+    width: 31px;
+    height: 18px;
+    font-size: 11px;
+    padding: 0px 0px;
+    text-align: center;
+}
+
+
+
+
