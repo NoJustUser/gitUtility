@@ -57,7 +57,7 @@
              ?>
 
         tabindex="<?php if ($j==0) {echo $i+31;} else {
-          if ($indx == $min) {echo $i};
+          if ($indx == $min) {echo $i;}
           }?>" placeholder="<?php if($j==0) {
           echo $times['time_in'];} elseif($j==1) {
           echo $times['time_out'];} else {
