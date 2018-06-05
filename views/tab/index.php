@@ -1,5 +1,6 @@
  <?php //include ROOT.'/views/layout/header.php';?>
 
+
 <div class="container">
   <div class="row">
 
@@ -30,19 +31,19 @@
       # Разбиваем сетку табеля и заполняем ее значениями из базы данных
       #################################################################
       $i=1;
-      $key=0;
       ?>
       <?php for($j=0; $j<=2; $j++): ?>
+        <?php $key=0;?>
       <?php foreach($dates as $times): ?>
       <?php if($j < 2) { ?>
         <div class="time" style="background-color: white;">
-        <form action="#" method="post">
+        <form action="/tab" method="post">
         <input id="contr-sm" class="form-control form-control-sm" type="text" name="inpt<?=$j.$i.$indx;?>" 
 
         <?php 
             # Устанавливаем autofocus в первой пустой ячейке табеля
             #######################################################
- 
+        
              if ($indx == $min) {
 
                     if ($j==0 && $times['res']=='') {
@@ -52,13 +53,15 @@
                     } elseif ($j==1 && $times['res']=='') {
                        echo 'autofocus';
                     }
+
                }
             ######################################################
              ?>
 
-        tabindex="<?php if ($j==0) {echo $i+31;} else {
-          if ($indx == $min) {echo $i;}
-          }?>" placeholder="<?php if($j==0) {
+          tabindex="<?php if ($j==0) {echo $i+31;}
+           elseif ($j==1) {
+           echo $i;
+          } elseif ($j==1) {echo $i;}?>" placeholder="<?php if($j==0) {
           echo $times['time_in'];} elseif($j==1) {
           echo $times['time_out'];} else {
           echo "0:00";
@@ -81,5 +84,4 @@
 
 </div>
 <hr>
-
 <?php //include ROOT.'/views/layout/footer.php';?>

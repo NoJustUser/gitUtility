@@ -10,7 +10,7 @@ class TabController {
 		$cadres = Cadre::getCadresList();
         $indx = 1;
         $ind = 1;
-
+        // Вынести в отдельный метод
         foreach ($cadres as $cadre) {
 	    	$indxar[$ind] = Tab::getTimesSum($ind);
 	        $ind++;
@@ -18,7 +18,9 @@ class TabController {
 	    
 	    $min = array_keys($indxar, min($indxar))[0];
 	    echo min($indxar);
-
+        ///////
+        $ind = 1;
+        $idxar1 = array();
 		foreach ($cadres as $cadre) { // основной цикл
 
 		$dates = array();
@@ -42,6 +44,8 @@ class TabController {
 		   	 	Tab::setTimeOut($id, $time, $indx);
 		   	 	$dates = Tab::getTimesList($indx);
 		   	 }
+
+		   	 
 		   }
 		 }
 	    }
@@ -56,6 +60,15 @@ class TabController {
 	   
 	    $dates = Tab::getTimesList($indx);
 	    //$indxar[$indx] = Tab::getTimesSum($indx);
+
+	    // Вынести в отдельный метод
+	         $ind = 1;
+             foreach ($cadres as $cadre) {
+	    	   $indxar1[$ind] = Tab::getTimesSum($ind);
+	           $ind++;
+	         }
+	         $min = array_keys($indxar1, min($indxar1))[0];
+	         ////
 
 	    include (ROOT.'/views/tab/index.php');
 		
